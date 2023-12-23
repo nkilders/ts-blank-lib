@@ -1,5 +1,11 @@
 # ts-blank
 
+## 0.1.1
+
+### Patch Changes
+
+- [#4](https://github.com/nkilders/npm-pub/pull/4) [`dd1fb08`](https://github.com/nkilders/npm-pub/commit/dd1fb08024b8521f91f03f4b481b05eb03b8d951) Thanks [@nkilders](https://github.com/nkilders)! - asdasd
+
 ## 0.1.0
 
 ### Minor Changes
