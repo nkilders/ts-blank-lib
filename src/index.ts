@@ -4,4 +4,17 @@ const x = {
     asd: '1234',
 };
 
-function myFunc() {}
+function myFunc() {
+
+
+
+
+    let x = 1;
+
+
+
+
+    console.log(x);
+    
+
+}
