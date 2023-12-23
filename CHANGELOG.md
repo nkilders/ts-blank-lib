@@ -1,5 +1,11 @@
 # ts-blank
 
+## 0.2.0
+
+### Minor Changes
+
+- 4c6e525: Implement function
+
 ## 0.1.1
 
 ### Patch Changes
