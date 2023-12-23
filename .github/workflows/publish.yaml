@@ -1,31 +1,27 @@
-name: Publish
+name: Release
 on:
     push:
         branches:
             - main
-
-env:
-    NODE_VERSION: 20
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
-permissions:
-    contents: write
-
 jobs:
-    build:
+    release:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-node@v3
               with:
-                  node-version: ${{ env.NODE_VERSION }}
-            - run: npm ci
-            - name: Create release pull request or publish
-              id: changesets
-              uses: changesets/action@v1
-              #   with:
-              #       publish: npm run build
+                  fetch-depth: 0
+            - name: Use Node.js 20
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 20
+            - name: Install Dependencies
+              run: npm ci
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - name: Create Release Pull Request or Publish to npm
+              uses: changesets/action@master
+              with:
+                  publish: npm run release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  #   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
