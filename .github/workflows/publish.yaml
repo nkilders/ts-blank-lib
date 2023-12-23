@@ -9,6 +9,9 @@ env:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+    contents: write
+
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -25,3 +28,4 @@ jobs:
                   publish: npm run build
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
