@@ -17,10 +17,12 @@ jobs:
                   node-version: 20
             - run: npm ci
 
+            # Increase version
             - uses: changesets/action@v1
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+            # #  Increase version and publish
             # - id: changesets
             #   uses: changesets/action@v1
             #   with:
