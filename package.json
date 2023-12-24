@@ -1,5 +1,5 @@
 {
-    "name": "ts-blank",
+    "name": "ts-blank-lib",
     "version": "0.2.1",
     "description": "",
     "main": "dist/index.js",
